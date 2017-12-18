@@ -37,10 +37,10 @@
 }
 
 - (void)setupGame{
-    seconds = 30;
+    _seconds = 30;
     count = 0;
     
-    timerLabel.text = [NSString stringWithFormat:@"Time: %i",seconds];
+    timerLabel.text = [NSString stringWithFormat:@"Time: %i",_seconds];
     label.text = [NSString stringWithFormat:@"Score\n%i",count];
     
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(subtractTime) userInfo:nil repeats:YES];
@@ -48,10 +48,10 @@
 }
 
 - (void)subtractTime{
-    seconds--;
-    timerLabel.text = [NSString stringWithFormat:@"Time: %i",seconds];
+    _seconds--;
+    timerLabel.text = [NSString stringWithFormat:@"Time: %i",_seconds];
     
-    if(seconds == 0){
+    if(_seconds == 0){
         [timer invalidate];
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time is up!" message:[NSString stringWithFormat:@"You scored %i points",count] delegate:self cancelButtonTitle:@"Play Again" otherButtonTitles:nil];

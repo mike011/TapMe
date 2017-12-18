@@ -13,11 +13,10 @@
     IBOutlet UILabel *timerLabel;
     
     NSInteger count;
-    NSInteger seconds;
-    
     NSTimer *timer; //ADD THIS!!
 }
 
+@property NSInteger seconds;
 - (IBAction) buttonPressed;
 - (void)setupGame;
 - (void)subtractTime;
