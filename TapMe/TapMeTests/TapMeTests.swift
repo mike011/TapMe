@@ -12,11 +12,37 @@ import XCTest
 
 class TapMeTests: XCTestCase {
     
-    func testExample() {
+    func testAfterSettingUpTheGameTheValuesAreSet() {
         let vc = ViewController()
         vc.setupGame()
         XCTAssertEqual(30, vc.seconds)
         XCTAssertEqual(0, vc.count)
-        
+    }
+    
+    func testTimerNotCreatedBeforeTheGameIsSetup() {
+        let vc = ViewController()
+        XCTAssertNil(vc.timer)
+    }
+
+    func testTimerIsCreatedBySetupGameAndIsReadyToGo() {
+        let vc = ViewController()
+        vc.setupGame()
+        XCTAssertTrue(vc.timer.isValid)
+    }
+    
+    func testTimerIsDeactivedWhenTheTimeHitsZero() {
+        let vc = ViewController()
+        vc.setupGame()
+        vc.seconds = 1
+        vc.subtractTime()
+        XCTAssertEqual(0, vc.seconds)
+        XCTAssertFalse(vc.timer.isValid)
+    }
+    
+    func testbuttonPressedUpdatesCountValue() {
+        let vc = ViewController()
+        vc.setupGame()
+        vc.buttonPressed()
+        XCTAssertEqual(vc.count, 1)
     }
 }

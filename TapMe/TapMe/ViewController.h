@@ -11,9 +11,9 @@
 @interface ViewController : UIViewController<UIAlertViewDelegate>{
     IBOutlet UILabel *label;
     IBOutlet UILabel *timerLabel;
-    NSTimer *timer; //ADD THIS!!
 }
 
+@property (nonatomic, assign) NSTimer *timer;
 @property NSInteger count;
 @property NSInteger seconds;
 - (IBAction) buttonPressed;

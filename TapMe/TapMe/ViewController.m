@@ -21,14 +21,6 @@
     [self setupGame];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
 //Implementing our method
 - (IBAction)buttonPressed{
     self.count++;
@@ -43,7 +35,7 @@
     timerLabel.text = [NSString stringWithFormat:@"Time: %li",_seconds];
     label.text = [NSString stringWithFormat:@"Score\n%li",self.count];
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(subtractTime) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(subtractTime) userInfo:nil repeats:YES];
     
 }
 
@@ -52,7 +44,7 @@
     timerLabel.text = [NSString stringWithFormat:@"Time: %li",_seconds];
     
     if(_seconds == 0){
-        [timer invalidate];
+        [self.timer invalidate];
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time is up!" message:[NSString stringWithFormat:@"You scored %li points",self.count] delegate:self cancelButtonTitle:@"Play Again" otherButtonTitles:nil];
         [alert show];
