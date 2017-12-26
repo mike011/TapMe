@@ -18,7 +18,35 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_tile.png"]];
+    self->label.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"field_score.png"]];
+    self->timerLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"field_time.png"]];
+    
+    _buttonBeep = [self setupAudioPlayerWithFile:@"ButtonTap" type:@"wav"];
+    _secondBeep = [self setupAudioPlayerWithFile:@"SecondBeep" type:@"wav"];
+    _backgroundMusic = [self setupAudioPlayerWithFile:@"HallOftheMountainKing" type:@"wav"];
     [self setupGame];
+}
+
+- (AVAudioPlayer *)setupAudioPlayerWithFile:(NSString *)file type:(NSString *)type
+{
+    // 1
+    NSString *path = [[NSBundle mainBundle] pathForResource:file ofType:type];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    
+    // 2
+    NSError *error;
+    
+    // 3
+    AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    
+    // 4
+    if (!audioPlayer) {
+        NSLog(@"%@",[error description]);
+    }
+    
+    return audioPlayer;
 }
 
 //Implementing our method
@@ -26,6 +54,8 @@
     self.count++;
     
     label.text = [NSString stringWithFormat:@"Score\n%li",self.count];
+    
+    [_buttonBeep play];
 }
 
 - (void)setupGame{

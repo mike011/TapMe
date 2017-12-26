@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		358F7DE41FF1E43C002F29CB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358F7DE31FF1E43C002F29CB /* AVFoundation.framework */; };
 		35C813D91FE3201900C78EBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C813D81FE3201900C78EBA /* AppDelegate.m */; };
 		35C813DC1FE3201900C78EBA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C813DB1FE3201900C78EBA /* ViewController.m */; };
 		35C813DF1FE3201900C78EBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35C813DD1FE3201900C78EBA /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		358F7DE31FF1E43C002F29CB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		35C813D41FE3201900C78EBA /* TapMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C813D71FE3201900C78EBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		35C813D81FE3201900C78EBA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				358F7DE41FF1E43C002F29CB /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,12 +67,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		358F7DE21FF1E43C002F29CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				358F7DE31FF1E43C002F29CB /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		35C813CB1FE3201900C78EBA = {
 			isa = PBXGroup;
 			children = (
 				35C813D61FE3201900C78EBA /* TapMe */,
 				35C813EF1FE3201900C78EBA /* TapMeTests */,
 				35C813D51FE3201900C78EBA /* Products */,
+				358F7DE21FF1E43C002F29CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
