@@ -25,14 +25,14 @@
     
     _buttonBeep = [self setupAudioPlayerWithFile:@"ButtonTap" type:@"wav"];
     _secondBeep = [self setupAudioPlayerWithFile:@"SecondBeep" type:@"wav"];
-    _backgroundMusic = [self setupAudioPlayerWithFile:@"HallOftheMountainKing" type:@"wav"];
+    _backgroundMusic = [self setupAudioPlayerWithFile:@"HallOfTheMountainKing" type:@"wav"];
     [self setupGame];
 }
 
 - (AVAudioPlayer *)setupAudioPlayerWithFile:(NSString *)file type:(NSString *)type
 {
     // 1
-    NSString *path = [[NSBundle mainBundle] pathForResource:file ofType:type];
+    NSString *path = [NSString stringWithFormat:@"%@/%@.%@", [[NSBundle mainBundle] resourcePath], file, type];
     NSURL *url = [NSURL fileURLWithPath:path];
     
     // 2
@@ -67,11 +67,15 @@
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(subtractTime) userInfo:nil repeats:YES];
     
+    [_backgroundMusic setVolume:0.3];
+    [_backgroundMusic play];
 }
 
 - (void)subtractTime{
     self.seconds--;
     timerLabel.text = [NSString stringWithFormat:@"Time: %li",_seconds];
+    
+    [_secondBeep play];
     
     if(_seconds == 0){
         [self.timer invalidate];
