@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		356BDBD21FF29B0700906849 /* ButtonTap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 356BDBCF1FF29B0700906849 /* ButtonTap.wav */; };
+		356BDBD31FF29B0700906849 /* HallOfTheMountainKing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 356BDBD01FF29B0700906849 /* HallOfTheMountainKing.mp3 */; };
+		356BDBD41FF29B0700906849 /* SecondBeep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 356BDBD11FF29B0700906849 /* SecondBeep.wav */; };
 		358F7DE41FF1E43C002F29CB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358F7DE31FF1E43C002F29CB /* AVFoundation.framework */; };
 		35C813D91FE3201900C78EBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C813D81FE3201900C78EBA /* AppDelegate.m */; };
 		35C813DC1FE3201900C78EBA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C813DB1FE3201900C78EBA /* ViewController.m */; };
@@ -29,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		356BDBCF1FF29B0700906849 /* ButtonTap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ButtonTap.wav; sourceTree = "<group>"; };
+		356BDBD01FF29B0700906849 /* HallOfTheMountainKing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = HallOfTheMountainKing.mp3; sourceTree = "<group>"; };
+		356BDBD11FF29B0700906849 /* SecondBeep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SecondBeep.wav; sourceTree = "<group>"; };
 		358F7DE31FF1E43C002F29CB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		35C813D41FE3201900C78EBA /* TapMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C813D71FE3201900C78EBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,6 +73,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		356BDBCE1FF29AEE00906849 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				356BDBCF1FF29B0700906849 /* ButtonTap.wav */,
+				356BDBD01FF29B0700906849 /* HallOfTheMountainKing.mp3 */,
+				356BDBD11FF29B0700906849 /* SecondBeep.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		358F7DE21FF1E43C002F29CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				35C813D61FE3201900C78EBA /* TapMe */,
+				356BDBCE1FF29AEE00906849 /* Sounds */,
 				35C813EF1FE3201900C78EBA /* TapMeTests */,
 				35C813D51FE3201900C78EBA /* Products */,
 				358F7DE21FF1E43C002F29CB /* Frameworks */,
@@ -206,9 +223,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356BDBD41FF29B0700906849 /* SecondBeep.wav in Resources */,
 				35C813E41FE3201900C78EBA /* LaunchScreen.storyboard in Resources */,
 				35C813E11FE3201900C78EBA /* Assets.xcassets in Resources */,
+				356BDBD21FF29B0700906849 /* ButtonTap.wav in Resources */,
 				35C813DF1FE3201900C78EBA /* Main.storyboard in Resources */,
+				356BDBD31FF29B0700906849 /* HallOfTheMountainKing.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

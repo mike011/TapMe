@@ -25,14 +25,15 @@
     
     _buttonBeep = [self setupAudioPlayerWithFile:@"ButtonTap" type:@"wav"];
     _secondBeep = [self setupAudioPlayerWithFile:@"SecondBeep" type:@"wav"];
-    _backgroundMusic = [self setupAudioPlayerWithFile:@"HallOfTheMountainKing" type:@"wav"];
+    _backgroundMusic = [self setupAudioPlayerWithFile:@"HallOfTheMountainKing" type:@"mp3"];
     [self setupGame];
 }
 
 - (AVAudioPlayer *)setupAudioPlayerWithFile:(NSString *)file type:(NSString *)type
 {
     // 1
-    NSString *path = [NSString stringWithFormat:@"%@/%@.%@", [[NSBundle mainBundle] resourcePath], file, type];
+    //NSString *path = [NSString stringWithFormat:@"%@/%@.%@", [[NSBundle mainBundle] resourcePath], file, type];
+    NSString *path = [[NSBundle mainBundle] pathForResource:file ofType:type];
     NSURL *url = [NSURL fileURLWithPath:path];
     
     // 2
