@@ -90,5 +90,19 @@
     [self setupGame];
 }
 
+- (void)extraFunction{
+    self.seconds--;
+    timerLabel.text = [NSString stringWithFormat:@"Time: %li",_seconds];
+    
+    [_secondBeep play];
+    
+    if(_seconds == 0){
+        [self.timer invalidate];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Time is up!" message:[NSString stringWithFormat:@"You scored %li points",self.count] delegate:self cancelButtonTitle:@"Play Again" otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
 @end
 
